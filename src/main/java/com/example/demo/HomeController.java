@@ -1,14 +1,17 @@
 package com.example.demo;
 
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller("/")
+@Controller
 public class HomeController {
-
-	public String homeController() {
-		return "Hello";
+	
+	@GetMapping("/")
+	public String index(Model model) {
+		model.addAttribute("msg", "Hello World!");
+		return "index";
 	}
-	
-	
 	
 }
