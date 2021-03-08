@@ -14,7 +14,7 @@ public class HomeController {
 	@Autowired
 	UserService userSerivce;
 
-	@GetMapping("/")
+	@GetMapping(path = {"/", "/home"})
 	public String index(Model model) {
 
 		userSerivce.save(new User("Shaun", 23));
